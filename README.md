@@ -1,4 +1,4 @@
-# NTU RobotX AY 2022/2023 First Batch
+# NTU RobotX AY 2022/2023 Second Batch
 This repo status is `ongoing`
 
 Team Members:
