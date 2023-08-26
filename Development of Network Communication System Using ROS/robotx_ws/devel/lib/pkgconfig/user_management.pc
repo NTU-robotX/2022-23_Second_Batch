@@ -1,0 +1,8 @@
+prefix=/home/steven/robotx_ws/devel
+
+Name: user_management
+Description: Description of user_management
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

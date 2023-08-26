@@ -1,0 +1,2 @@
+UAV_GPS:UAV_camera:UAV_path_planning:acoustic:camera:gps:motor_control:path_planning:task_manager:user_management
+-DCATKIN_DEVEL_PREFIX=/home/steven/robotx_ws/devel -DCMAKE_INSTALL_PREFIX=/home/steven/robotx_ws/install -G Unix Makefiles
