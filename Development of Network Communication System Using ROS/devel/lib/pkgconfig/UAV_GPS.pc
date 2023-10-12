@@ -1,8 +1,0 @@
-prefix=/home/steven/robotx_ws/devel
-
-Name: UAV_GPS
-Description: Description of UAV_GPS
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

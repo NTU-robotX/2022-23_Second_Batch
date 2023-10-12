@@ -1,8 +1,0 @@
-prefix=/home/steven/robotx_ws/install
-
-Name: UAV_path_planning
-Description: Description of UAV_path_planning
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
