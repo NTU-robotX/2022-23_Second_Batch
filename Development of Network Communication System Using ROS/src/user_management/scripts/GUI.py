@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """ import rospy
 from std_msgs.msg import String
@@ -34,8 +34,8 @@ import rospy
 from std_msgs.msg import String
 
 def publisher():
-    UAV_mode_pub = rospy.Publisher(this_nodes_namespace + 'UAV_mode', String, queue_size=10)
-    task_status_pub = rospy.Publisher(this_nodes_namespace + 'task_status', String, queue_size=10)
+    UAV_mode_pub = rospy.Publisher('UAV_mode', String, queue_size=10)
+    task_status_pub = rospy.Publisher('task_status', String, queue_size=10)
     rate = rospy.Rate(1) # 1hz
     while not rospy.is_shutdown():
         UAV_mode_str = "[UAV_MODE] 0, UAV is in Autonomous Mode"
@@ -94,7 +94,7 @@ if __name__ == '__main__':
         rospy.loginfo(f"[{node_name}] namespace of node = " + rospy.get_namespace())
 
         # Put the namespace into a global variable for this script
-        this_nodes_namespace = rospy.get_namespace()
+        # this_nodes_namespace = rospy.get_namespace()
 
         task = 8  # Set your task number here
         subscriber(task)

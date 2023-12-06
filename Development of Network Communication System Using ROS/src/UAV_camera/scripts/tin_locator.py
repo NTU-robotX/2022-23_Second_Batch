@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 from std_msgs.msg import String
 
 def publisher():
-    pub_cam_tin = rospy.Publisher(this_nodes_namespace + 'UAV_cam_tin', String, queue_size=10)
-    pub_tin_status = rospy.Publisher(this_nodes_namespace + 'UAV_tin_status', String, queue_size=10)
+    pub_cam_tin = rospy.Publisher( 'UAV_cam_tin', String, queue_size=10)
+    pub_tin_status = rospy.Publisher( 'UAV_tin_status', String, queue_size=10)
     
     rate = rospy.Rate(1) # 1hz
     while not rospy.is_shutdown():
@@ -40,10 +40,10 @@ if __name__ == '__main__':
         rospy.init_node(node_name, anonymous=True)
 
         # Put the namespace into a global variable for this script
-        this_nodes_namespace = rospy.get_namespace()
+        # this_nodes_namespace = rospy.get_namespace()
 
         # Subscribing to the 'task_status' topic
-        rospy.Subscriber(this_nodes_namespace + 'task_status', String, callback)
+        rospy.Subscriber('task_status', String, callback)
 
         publisher()
     except rospy.ROSInterruptException:

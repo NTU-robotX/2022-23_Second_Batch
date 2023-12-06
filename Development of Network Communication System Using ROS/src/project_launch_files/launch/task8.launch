@@ -1,0 +1,13 @@
+<launch>
+  <!-- Launch task_checker node from task_manager package -->
+  <node pkg="task_manager" type="task_checker.py" name="task_checker" ns="/task8" output="screen"/>
+
+  <!-- Launch task8 node from task_manager package -->
+  <node pkg="task_manager" type="task8_manager.py" name="task8_node" ns="/task8" output="screen"/>
+
+  <!-- Launch tin_locator node from UAV_camera package -->
+  <node pkg="UAV_camera" type="tin_locator.py" name="tin_locator" ns="/task8" output="screen"/>
+
+  <!-- Launch UAV_status node from UAV_path_planning package -->
+  <node pkg="UAV_path_planning" type="UAV_status.py" name="UAV_status" ns="/task8" output="screen"/>
+</launch>

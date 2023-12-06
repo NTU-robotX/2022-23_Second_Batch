@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="task_manager" type="task8_manager.py" name="task8_manager" />
+  <!-- other nodes -->
+</launch>

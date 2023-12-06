@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 from std_msgs.msg import String
 
 def publisher():
-    pub = rospy.Publisher(this_nodes_namespace + topic, String, queue_size=10)
-    # pub = rospy.Publisher("UAV_status", String, queue_size=10)
+    # pub = rospy.Publisher(this_nodes_namespace + topic, String, queue_size=10)
+    pub = rospy.Publisher(topic, String, queue_size=10)
     
     rate = rospy.Rate(1) # 1hz
     while not rospy.is_shutdown():
@@ -21,6 +21,7 @@ if __name__ == '__main__':
     try:
         global topic, this_nodes_namespace
         topic = 'UAV_status'
+
         # Initialise the node
         rospy.init_node(topic, anonymous=True)
 

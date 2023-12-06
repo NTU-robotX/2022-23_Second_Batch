@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 import rospy
 from std_msgs.msg import String
@@ -67,22 +67,24 @@ def publish_task8_message():
         task8_pub.publish(task8_message)
 
 def subscriber():
-    rospy.Subscriber(this_nodes_namespace + 'UAV_status', String, callback_uav_status)
-    rospy.Subscriber(this_nodes_namespace + 'UAV_tin_status', String, callback_tin_status)
+    rospy.Subscriber('UAV_status', String, callback_uav_status)
+    rospy.Subscriber('UAV_tin_status', String, callback_tin_status)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
 
 if __name__ == '__main__':
+    global task8_pub, node_name 
+    node_name = "task8"
+
     # Initialize the node
-    rospy.init_node("task8", anonymous=True)
+    rospy.init_node(node_name, anonymous=True)
 
     # Creating a publisher for the UAV_replenishment topic
-    global task8_pub
     task8_pub = rospy.Publisher('UAV_replenishment', String, queue_size=10)
 
     # Display the namespace of the node handle
-    rospy.loginfo("[SUBSCRIBER PY NODE] namespace of node = " + rospy.get_namespace())
+    rospy.loginfo("[TASK 8 MANAGER] namespace of node = " + rospy.get_namespace())
 
     # Put the namespace into a global variable for this script
     global this_nodes_namespace, UAV_status, tin_status
