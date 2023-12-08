@@ -1,0 +1,10 @@
+<launch>
+  <!-- <node pkg="task_manager" type="task_checker.py" name="task_checker" ns="/task8" output="screen"/> -->
+
+  <node pkg="task_manager" type="task6.py" name="task6_node" ns="/task6" output="screen"/>
+
+  <node pkg="camera" type="cam_task6.py" name="cam_task6" ns="/task6" output="screen"/>
+
+  <node pkg="path_planning" type="path_task6.py" name="path_task6" ns="/task6" output="screen"/>
+
+</launch>

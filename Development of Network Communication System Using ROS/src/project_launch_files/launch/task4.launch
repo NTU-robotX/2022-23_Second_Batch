@@ -1,0 +1,19 @@
+<launch>
+  <!-- <node pkg="task_manager" type="task_checker.py" name="task_checker" ns="/task8" output="screen"/> -->
+
+  <node pkg="task_manager" type="task4.py" name="task4_node" ns="/task4" output="screen"/>
+
+  <node pkg="camera" type="cam_task4.py" name="cam_task4" ns="/task4" output="screen"/>
+  
+  <node pkg="gps" type="ASV_gps.py" name="ASV_gps" ns="/task4" output="screen"/>
+  
+  <node pkg="path_planning" type="path_task4.py" name="path_task4" ns="/task4" output="screen"/>
+  
+  <node pkg="UAV_camera" type="UAV_cam_task4.py" name="UAV_cam_task4" ns="/task4" output="screen"/>
+  
+  <node pkg="UAV_GPS" type="UAV_gps.py" name="UAV_gps" ns="/task4" output="screen"/>
+  
+  <node pkg="UAV_path_planning" type="UAV_task4_pp.py" name="UAV_task4_pp" ns="/task4" output="screen"/>
+  
+  
+</launch>

@@ -65,7 +65,9 @@ def callback(data):
 def subscriber(task):
     if task <= 9:
         if task == 8:
-            rospy.Subscriber('UAV_replenishment' , String, callback)
+            rospy.Subscriber(f'task{task}/UAV_replenishment' , String, callback)
+        if task == 9:
+            rospy.Subscriber(f'task{task}/UAV_search_and_report' , String, callback)
         else:
             rospy.Subscriber('UAV_status', String, callback)
 
@@ -79,7 +81,7 @@ if __name__ == '__main__':
             "1": "Situational Awareness and Reporting",
             "2": "Entrance and Exit Gates",
             "3": "Follow the Path",
-            "4": "Wildlife Encounter – React and Report",
+            "4": "Wildlife Encounter - React and Report",
             "5": "Scan the Code",
             "6": "Detect and Dock",
             "7": "Find and Fling",
@@ -96,7 +98,7 @@ if __name__ == '__main__':
         # Put the namespace into a global variable for this script
         # this_nodes_namespace = rospy.get_namespace()
 
-        task = 8  # Set your task number here
+        task = 7  # Set your task number here
         subscriber(task)
         publisher()
 

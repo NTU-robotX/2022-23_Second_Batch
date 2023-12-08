@@ -1,0 +1,8 @@
+<launch>
+  <!-- <node pkg="task_manager" type="task_checker.py" name="task_checker" ns="/task8" output="screen"/> -->
+
+  <node pkg="task_manager" type="task7.py" name="task7_node" ns="/task7" output="screen"/>
+
+  <node pkg="camera" type="cam_task7.py" name="cam_task7" ns="/task7" output="screen"/>
+
+</launch>

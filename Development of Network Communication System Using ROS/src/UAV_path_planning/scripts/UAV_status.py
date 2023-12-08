@@ -9,9 +9,9 @@ def publisher():
     
     rate = rospy.Rate(1) # 1hz
     while not rospy.is_shutdown():
-        UAV_status_str = f"[{topic}]: 0, UAV is Stowed, timestamp: {rospy.get_time()}"
-        # UAV_status_str = f"[{topic}]: 1, UAV is Deployed, timestamp: {rospy.get_time()}"
-        # UAV_status_str = f"[{topic}]: 2, UAV is Faulted, timestamp: {rospy.get_time()}"
+        UAV_status_str = f"[{topic}]: 1, UAV is Stowed, timestamp: {rospy.get_time()}"
+        # UAV_status_str = f"[{topic}]: 2, UAV is Deployed, timestamp: {rospy.get_time()}"
+        # UAV_status_str = f"[{topic}]: 3, UAV is Faulted, timestamp: {rospy.get_time()}"
         rospy.loginfo(UAV_status_str)
         pub.publish(UAV_status_str)
         rate.sleep()

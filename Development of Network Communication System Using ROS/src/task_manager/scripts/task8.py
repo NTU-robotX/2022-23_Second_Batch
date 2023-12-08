@@ -50,7 +50,7 @@ def callback_tin_status(data):
     global tin_status
     # Parsing the value to get tin_status
     tin_status = data.data.split(" ")[1].split(",")[0].strip()
-    print(f"tin_status: {tin_status}")
+    # print(f"tin_status: {tin_status}")
     publish_task8_message()
 
 def publish_task8_message():

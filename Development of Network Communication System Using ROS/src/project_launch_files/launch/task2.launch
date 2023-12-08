@@ -1,0 +1,14 @@
+<launch>
+  <!-- <node pkg="task_manager" type="task_checker.py" name="task_checker" ns="/task8" output="screen"/> -->
+
+  <node pkg="task_manager" type="task2.py" name="task2_node" ns="/task2" output="screen"/>
+
+  <node pkg="camera" type="cam_task2.py" name="cam_task2" ns="/task2" output="screen"/>
+  
+  <node pkg="gps" type="ASV_gps.py" name="ASV_gps" ns="/task2" output="screen"/>
+  
+  <node pkg="path_planning" type="path_task2.py" name="path_task2" ns="/task2" output="screen"/>
+
+  <node pkg="acoustic" type="beacon_detector.py" name="beacon_detector" ns="/task2" output="screen"/>
+  
+</launch>

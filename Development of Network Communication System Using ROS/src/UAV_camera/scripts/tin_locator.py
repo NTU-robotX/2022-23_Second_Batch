@@ -9,20 +9,19 @@ def publisher():
     
     rate = rospy.Rate(1) # 1hz
     while not rospy.is_shutdown():
-        if task_status == 8:
-            # Customize these with your actual coordinates and status
-            x, y, z = 1.0, 2.0, 3.0
-            item_status = 0
-            status_details = ["Not Picked Up", "Picked Up", "Delivered"]
+        # if task_status == 8:
+        x, y, z = 1.0, 2.0, 3.0
+        item_status = 0
+        status_details = ["Not Picked Up", "Picked Up", "Delivered"]
 
-            cam_tin_str = f"[UAV_CAM_TIN] Tin coordinate: ({x},{y},{z})"
-            item_status_str = f"[UAV_TIN_STATUS] {item_status}, Tin is {status_details[item_status]}"
+        cam_tin_str = f"[UAV_CAM_TIN] Tin distance: ({x},{y},{z})"
+        item_status_str = f"[UAV_TIN_STATUS] {item_status}, Tin is {status_details[item_status]}"
 
-            rospy.loginfo(cam_tin_str)
-            pub_cam_tin.publish(cam_tin_str)
-            
-            rospy.loginfo(item_status_str)
-            pub_tin_status.publish(item_status_str)
+        rospy.loginfo(cam_tin_str)
+        pub_cam_tin.publish(cam_tin_str)
+        
+        rospy.loginfo(item_status_str)
+        pub_tin_status.publish(item_status_str)
         
         rate.sleep()
 
@@ -43,7 +42,7 @@ if __name__ == '__main__':
         # this_nodes_namespace = rospy.get_namespace()
 
         # Subscribing to the 'task_status' topic
-        rospy.Subscriber('task_status', String, callback)
+        # rospy.Subscriber('task_status', String, callback)
 
         publisher()
     except rospy.ROSInterruptException:
