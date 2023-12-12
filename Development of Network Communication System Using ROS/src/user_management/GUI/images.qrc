@@ -1,0 +1,20 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>Images/task_8_node.png</file>
+    <file>Images/task_9_node.png</file>
+    <file>Images/pngegg.png</file>
+    <file>Images/Prof_Xie_Ming.jpg</file>
+    <file>Images/robotx logo_vert.png</file>
+    <file>Images/RobotX.png</file>
+    <file>Images/Screenshot 2023-06-27 225204.jpg</file>
+    <file>Images/task_1.png</file>
+    <file>Images/task_2.png</file>
+    <file>Images/task_3.png</file>
+    <file>Images/task_4.png</file>
+    <file>Images/task_5.png</file>
+    <file>Images/task_6.png</file>
+    <file>Images/task_7.png</file>
+    <file>Images/task_8.png</file>
+    <file>Images/task_9.png</file>
+  </qresource>
+</RCC>
