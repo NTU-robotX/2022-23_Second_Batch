@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>Images/task_1.png</file>
+    <file>Images/RobotX.png</file>
+    <file>Images/Prof_Xie_Ming.jpg</file>
+    <file>Images/pngegg.png</file>
+    <file>Images/robotx logo_vert.png</file>
+  </qresource>
+</RCC>

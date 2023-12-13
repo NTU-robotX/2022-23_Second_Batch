@@ -1,0 +1,18 @@
+my_turtle:
+  background_b: 255
+  background_g: 86
+  background_r: 69
+rosdistro: 'noetic
+
+  '
+roslaunch:
+  uris:
+    host_illyas_14itl05__42035: http://illyas-14ITL05:42035/
+rosversion: '1.16.0
+
+  '
+run_id: d12e3f3a-100e-11ee-84df-9b0f528c1973
+turtlesim:
+  background_b: 255
+  background_g: 86
+  background_r: 150
