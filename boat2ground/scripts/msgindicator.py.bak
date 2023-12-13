@@ -1,0 +1,69 @@
+import rospy
+from std_msgs.msg import String
+from rqt_gui.main import Main
+from rqt_gui_py.plugin import Plugin
+
+
+class MessageIndicator(Plugin):
+    """Plugin that shows a green circle if a message is received and a red circle if not."""
+
+    def __init__(self, context):
+        super().__init__(context)
+        self._message_received = False
+
+        # Create a subscriber to the "chatter" topic.
+        subscriber = rospy.Subscriber("chatter", String, self._message_received_callback)
+
+        # Create a widget that will show the circle.
+        self._widget = self._create_widget()
+        context.add_widget(self._widget)
+
+    def _message_received_callback(self, msg):
+        """Callback function for when a message is received."""
+        self._message_received = True
+        self._update_widget()
+
+    def _create_widget(self):
+        """Creates the widget that will show the circle."""
+        widget = QtGui.QWidget()
+        widget.setFixedSize(100, 100)
+
+        # Create a green circle if a message is received, and a red circle if not.
+        if self._message_received:
+            color = QtGui.QColor(0, 255, 0)
+        else:
+            color = QtGui.QColor(255, 0, 0)
+        pixmap = QtGui.QPixmap(100, 100)
+        pixmap.fill(color)
+
+        # Create a label that will show the message.
+        label = QtGui.QLabel()
+        label.setText("Message Received")
+
+        # Layout the widget.
+        layout = QtGui.QVBoxLayout()
+        layout.addWidget(pixmap)
+        layout.addWidget(label)
+        widget.setLayout(layout)
+
+        return widget
+
+    def _update_widget(self):
+        """Updates the widget to show the current state."""
+        if self._message_received:
+            color = QtGui.QColor(0, 255, 0)
+        else:
+            color = QtGui.QColor(255, 0, 0)
+        self._widget.setStyleSheet("background-color: {};".format(color.name()))
+
+
+def main():
+    """Main function."""
+    app = QtGui.QApplication([])
+    plugin = MessageIndicator()
+    app.exec_()
+
+
+if __name__ == "__main__":
+    main()
+
